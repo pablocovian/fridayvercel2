@@ -8,6 +8,12 @@ body {
   background-color: #ffffff;
 }
 
+/* Paused state for orbiting elements */
+.paused-animation .orbiting-group,
+.paused-animation .orbiting-logo {
+  animation-play-state: paused !important;
+}
+
 /* Orbit Container */
 .orbit-container {
   position: relative;
