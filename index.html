@@ -5,9 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rotating Integrations</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .orbit-fallback {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      z-index: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .orbit-container.loaded .orbit-fallback {
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
 </head>
-<body class="paused-animation">
-  <div class="orbit-container">
+<body>
+  <div class="orbit-container" id="orbitContainer">
+    <!-- Static Placeholder Image -->
+    <img src="assets/orbit-placeholder.png" alt="Orbit Preview" class="orbit-fallback" />
+
     <!-- Core System Icon (Centered) -->
     <div class="center-icon">
       <img src="assets/center-icon.png" alt="Core System" />
@@ -44,10 +61,9 @@
     </div>
   </div>
 
-  <!-- Unpause animation after everything loads -->
   <script>
     window.addEventListener('load', () => {
-      document.body.classList.remove('paused-animation');
+      document.getElementById('orbitContainer').classList.add('loaded');
     });
   </script>
 </body>
