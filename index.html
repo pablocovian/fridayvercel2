@@ -6,7 +6,7 @@
   <title>Rotating Integrations</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="paused-animation">
   <div class="orbit-container">
     <!-- Core System Icon (Centered) -->
     <div class="center-icon">
@@ -43,5 +43,12 @@
       </div>
     </div>
   </div>
+
+  <!-- Unpause animation after everything loads -->
+  <script>
+    window.addEventListener('load', () => {
+      document.body.classList.remove('paused-animation');
+    });
+  </script>
 </body>
 </html>
