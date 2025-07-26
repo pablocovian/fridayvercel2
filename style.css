@@ -136,3 +136,17 @@ body {
     transform: translate(-50%, -50%) rotate(-360deg);
   }
 }
+
+/* Fallback static image fade-out */
+.orbit-fallback {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.orbit-container.loaded .orbit-fallback {
+  opacity: 0;
+  pointer-events: none;
+}
